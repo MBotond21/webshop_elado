@@ -36,13 +36,16 @@
                 </form>
             </div>
         </div>
-    </div>
-
-    <% for (let e of errors) { %>
-        <div class="alert alert-danger" role="alert">
-            <%=e%>
+        <div class="row">
+            <div class="col-sm-6">
+                <% for (let e of errors) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%=e%>
+                    </div>
+                <% } %>
+            </div>
         </div>
-    <% } %>
+    </div>
 </body>
 
 </html>
