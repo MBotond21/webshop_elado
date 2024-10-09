@@ -2,6 +2,7 @@ import { Controller, Get, Render, Post, Res, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 import { DataDto } from './DataDto.dto';
 import { Response } from 'express';
+import { writeFileSync } from 'fs';
 
 @Controller()
 export class AppController {
@@ -48,6 +49,10 @@ export class AppController {
       })
       return;
     }
+
+    writeFileSync("data.csv", `${dataDto.name};${dataDto.card}\n`, {
+      flag: "a"
+     })
 
     response.redirect('/paymentSuccess')
 
