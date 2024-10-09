@@ -18,7 +18,7 @@ export class AppController {
 
   @Get('dataForm')
   @Render('dataForm')
-  getPersonalForm() { 
+  getDataForm() { 
     return {
       data: {},
       errors: []
@@ -54,12 +54,12 @@ export class AppController {
       flag: "a"
      })
 
-    response.redirect('/paymentSuccess')
+    response.redirect('/settingSuccess')
 
   }
 
-  @Get('paymentSuccess')
-  getPaymentSuccess() {
+  @Get('settingSuccess')
+  getSettingSuccess() {
     return "Sikeres beállítás!"
   }
 }
